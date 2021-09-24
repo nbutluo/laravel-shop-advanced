@@ -5,10 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Ramsey\Uuid\Uuid;
+use Encore\Admin\Traits\DefaultDatetimeFormat;
 
 class Order extends Model
 {
     use HasFactory;
+    use DefaultDatetimeFormat;
 
     const REFUND_STATUS_PENDING = 'pending';
     const REFUND_STATUS_APPLIED = 'applied';
