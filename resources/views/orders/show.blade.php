@@ -82,7 +82,11 @@
             </div>
             <div class="line">
               <div class="line-label">退款理由：</div>
+              @if($order->type === \App\Models\Order::TYPE_NORMAL)
               <div class="line-value">{{ $order->extra['refund_reason'] }}</div>
+              @else
+              <div class="line-value">众筹失败</div>
+              @endif
             </div>
             @endif
           </div>

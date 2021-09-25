@@ -97,7 +97,11 @@
         <tr>
           <td>退款状态：</td>
           <td colspan="2">
+            @if ($order->type=== \App\Models\Order::TYPE_NORMAL)
             {{ \App\Models\Order::$refundStatusMap[$order->refund_status] }}，理由：{{ $order->extra['refund_reason'] }}
+            @else
+            {{ \App\Models\Order::$refundStatusMap[$order->refund_status] }}，理由：众筹失败
+            @endif
           </td>
           <td>
             <!-- 如果订单退款状态是已申请，则展示处理按钮 -->
