@@ -33,6 +33,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('payment/{order}/wechat', 'PaymentController@payByWechat')->name('payment.wechat');
     Route::post('payment/{order}/installment', 'PaymentController@payByInstallment')->name('payment.installment');
     Route::get('installments', 'InstallmentsController@index')->name('installments.index');
+    Route::get('installments/{installment}', 'InstallmentsController@show')->name('installments.show');
 
     Route::post('orders/{order}/received', 'OrdersController@received')->name('orders.received');
 
